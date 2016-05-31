@@ -28,6 +28,7 @@ namespace COMP123_s2016_Lesson4
             Console.WriteLine();
             Tommy.Studies();
 
+            Tommy.Courses.Add(new Course("COMP123", "Programming 2"));
             Console.WriteLine();
             // create instance of the Teacher class
 
