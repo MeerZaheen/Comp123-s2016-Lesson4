@@ -18,8 +18,7 @@ namespace COMP123_s2016_Lesson4
         // Private Intance variables ++++++++++++++++++++++++++++++++++++++
         private string _name;
         private int _age;
-        private string _profession;
-        private string _collegeOrUniversity;
+
 
         // Public properties ++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -65,48 +64,6 @@ namespace COMP123_s2016_Lesson4
             }
         }
 
-        /**
-        * <summary>
-        * This is a public property for our private _profession field
-        * </summary>
-        * 
-        * @property {string} Profession
-        */
-
-        public string Profession  // CAN ALSO USE THIS: public string Profession { get; set; }
-        {
-            get
-            {
-                return this._profession;
-            }
-
-            set
-            {
-                this._profession = value;
-            }
-        }
-
-        /**
-        * <summary>
-        * This is a public property for our private _collegeOrUniversity field
-        * </summary>
-        * 
-        * @property {string} Profession
-        */
-
-        public string CollegeOrUniversity  // CAN ALSO USE THIS: public string CollegeOrUniversity { get; set; }
-        {
-            get
-            {
-                return this._collegeOrUniversity;
-            }
-
-            set
-            {
-                this._collegeOrUniversity = value;
-            }
-        }
-
         // CONSTRUCTORS ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         /**
@@ -121,8 +78,6 @@ namespace COMP123_s2016_Lesson4
         {
             this.Name = "Unknown Name";
             this.Age = 0;
-            this.Profession = "Unknown Profession";
-            this.CollegeOrUniversity = "Unknown College/University";
         }
 
         /**
@@ -139,8 +94,6 @@ namespace COMP123_s2016_Lesson4
         {
             this.Name = name;
             this.Age = 0;
-            this.Profession = "Unknown Profession";
-            this.CollegeOrUniversity = "Unknown College/University";
         }
 
         /**
@@ -157,8 +110,6 @@ namespace COMP123_s2016_Lesson4
         {
             this.Name = "unknown name!";
             this.Age = age;
-            this.Profession = "Unknown Profession";
-            this.CollegeOrUniversity = "Unknown College/University";
         }
 
         /** <summary>
@@ -173,12 +124,10 @@ namespace COMP123_s2016_Lesson4
         * @param {string} profession
         */
 
-        public Person(string name, int age, string profession, string collegeOrUniversity)
+        public Person(string name, int age)
         {
             this.Name = name;
             this.Age = age;
-            this.Profession = profession;
-            this.CollegeOrUniversity = collegeOrUniversity;
         }
 
 
@@ -212,35 +161,6 @@ namespace COMP123_s2016_Lesson4
         public void ShowAge()
         {
             Console.WriteLine(this.Name + " is " + this.Age + " years old.");
-        }
-
-        /**
-        * <summary>
-        * This method outputs the _name and _profession values in the following
-        * format: _name + "'s profession is: " + this.Profession
-        * </summary>
-        * 
-        * @method ShowProfession
-        * @returns {void}
-        */
-
-        public void ShowProfession()
-        {
-            Console.WriteLine(this.Name + "'s profession is: " + this.Profession);
-        }
-
-        /**
-        * <summary>
-        * This method outputs the _name and _collegeOrUniversity values in the following
-        * format: _name + "'s profession is: " + this.CollegeOrUniversity
-        * </summary>
-        * 
-        * @method ShowCollegeOrUniversity
-        * @returns {void}
-        */
-        public void ShowCollegeOrUniversity()
-        {
-            Console.WriteLine(this.Name + " attends: " + this.CollegeOrUniversity);
         }
     }
 }
