@@ -46,6 +46,9 @@ namespace COMP123_s2016_Lesson4
                 this._description = value;
             }
         }
+
+        // CONSTRUCTORS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
         /**
         * <summary>
         * This constructor takes two parameters: Code and Description

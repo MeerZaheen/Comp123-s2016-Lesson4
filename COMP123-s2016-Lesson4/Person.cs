@@ -76,8 +76,7 @@ namespace COMP123_s2016_Lesson4
 
         public Person()
         {
-            this.Name = "Unknown Name";
-            this.Age = 0;
+            this._initialize();
         }
 
         /**
@@ -92,8 +91,8 @@ namespace COMP123_s2016_Lesson4
 
         public Person(string name)
         {
+            this._initialize();
             this.Name = name;
-            this.Age = 0;
         }
 
         /**
@@ -108,7 +107,7 @@ namespace COMP123_s2016_Lesson4
 
         public Person(int age)
         {
-            this.Name = "unknown name!";
+            this._initialize();
             this.Age = age;
         }
 
@@ -133,6 +132,21 @@ namespace COMP123_s2016_Lesson4
 
         // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+
+        /**
+         * <summary>
+         * This method initializes the public properties Name and Age
+         * </summary>
+         * 
+         * @private
+         * @method _initialize
+         * @returns {void}
+         */
+        private void _initialize()
+        {
+            this.Name = "unknown name!";
+            this.Age = 0;
+        }
 
         /**
          * <summary>

@@ -10,21 +10,27 @@ namespace COMP123_s2016_Lesson4
     * <summary>
     * This is the student class. It is derived from the Person Class
     * </summary>
+    *
+    * @class Student
+    * @extends Person
     */
     class Student : Person
     {
         // Private Instance variables +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         private string _studentID;
+        private List<Course> _courses = new List<Course>();
 
         // Public properties ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-        
+
         /**
-        * <summary> 
-        * This is a property, StudentID, includes
-        * </summary>
-        *
-        */
+         * <summary>
+         * This property, StudentID, includes a getter and setter for the private
+         * instance variable _studentID
+         * </summary>
+         * 
+         * @property StudentID
+         */
         public string StudentID
         {
             get
@@ -36,6 +42,24 @@ namespace COMP123_s2016_Lesson4
             {
                 this._studentID = value;
             }
+        }
+
+
+        /**
+         * <summary>
+         * This read-only property gets a reference to the _courses - a List object of Course type
+         * </summary>
+         * 
+         * @readOnly
+         * @property Courses
+         */
+        public List<Course> Courses
+        {
+            get
+            {
+                return this._courses;
+            }
+
         }
 
         // Constructors +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -72,5 +96,27 @@ namespace COMP123_s2016_Lesson4
         {
             Console.WriteLine(this.Name + " studies.");
         }
+
+        /**
+        * <summary>
+        * This method lists all the courses the student is currently enrollled in.
+        * </summary>
+        * 
+        * @method ShowCourses
+        * @returns {void}
+        */
+        public void ShowCourses()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Course List");
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++");
+            foreach (Course course in this._courses)
+            {
+                Console.WriteLine("+ " + course.Code + " " + course.Description);
+            }
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine();
+        }
     }
 }
+    
