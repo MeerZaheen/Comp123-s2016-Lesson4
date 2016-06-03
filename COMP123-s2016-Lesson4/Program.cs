@@ -29,8 +29,14 @@ namespace COMP123_s2016_Lesson4
 
             tommy.Studies();
 
+            // can also do: Course COMP123 = New Course("COMP123", "Programming 2");
+            //              Course COMP125 = New Course("COMP125", "Client-Side Web Development");
+            //              tommy.Course.Add(COMP123);
+            //              tommy.Course.Add(COMP125);
+
             tommy.Courses.Add(new Course("COMP123", "Programming 2"));
             tommy.Courses.Add(new Course("COMP125", "Client-Side Web Development"));
+            tommy.Courses.Add(new Course("COMP397", "Web-Game Programming"));
 
             tommy.ShowCourses();
 
@@ -44,6 +50,53 @@ namespace COMP123_s2016_Lesson4
             Console.WriteLine();
 
             tom.Teaches();
+
+            List<string> names = new List<string>();
+
+            names.Add("Tom");
+            names.Add("Mary");
+            names.Add("Rutvik");
+
+            int count = 0;
+            Console.WriteLine();
+            Console.WriteLine("++++++++++++++++++++++++++++++++++");
+            foreach (string name in names)
+            {
+                Console.WriteLine("Name #" + count + " is " + name);
+                count++;
+            }
+            Console.WriteLine("++++++++++++++++++++++++++++++++++");
+
+            List<Card> Deck = new List<Card>();
+
+            CreateDeck(Deck);
+        }
+
+        public static void CreateDeck(List<Card> deck)
+        {
+            string suit = "";
+            for (int i = 0; i < 4; i++)
+            {
+                switch(i)
+                {
+                    case 0:
+                        suit = "hearts";
+                        break;
+                    case 1:
+                        suit = "clubs";
+                        break;
+                    case 2:
+                        suit = "diamonds";
+                        break;
+                    case 3:
+                        suit = "spades";
+                        break;
+                }
+                for (int face = 1; face < 14; face++)
+                {
+                    deck.Add(new Card(face, suit));
+                }
+            }
         }
     }
 }
